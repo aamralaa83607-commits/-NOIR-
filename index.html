@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11100e" />
+  <meta name="description" content="NOIR — اكتشف مجموعة مختارة من العطور الفاخرة." />
+  <title>NOIR | عطور استثنائية</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">
+    توصيل مجاني للطلبات التي تتجاوز ٢٬٥٠٠ جنيه
+    <span>✦</span>
+    لمسة من الفخامة في كل زجاجة
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="NOIR الصفحة الرئيسية">
+      <span class="brand-mark">N</span>
+      <span>NOIR<small>PERFUME HOUSE</small></span>
+    </a>
+
+    <nav class="main-nav" aria-label="التنقل الرئيسي">
+      <a href="#home">الرئيسية</a>
+      <a href="#products">العطور</a>
+      <a href="#story">حكاية NOIR</a>
+    </nav>
+
+    <button class="cart-trigger" id="openCart" aria-label="فتح سلة المشتريات">
+      السلة <span id="cartCount">0</span> <b>＋</b>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> عطور مختارة بعناية</p>
+        <h1>اترك أثرًا<br><em>لا يُنسى.</em></h1>
+        <p class="hero-copy">
+          لأن حضورك يستحق توقيعًا خاصًا. اكتشف مجموعة من الروائح
+          التي تجمع بين الأصالة والجرأة والفخامة.
+        </p>
+
+        <a class="gold-button" href="#products">
+          اكتشف المجموعة <span>←</span>
+        </a>
+
+        <div class="hero-notes">
+          <div><strong>40</strong><small>عطرًا مميزًا</small></div>
+          <i></i>
+          <div><strong>100%</strong><small>اختيارات استثنائية</small></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-glow"></div>
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <img
+          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1100&q=85"
+          alt="زجاجة عطر فاخرة بإضاءة ذهبية"
+        />
+        <div class="hero-caption">
+          <span>01 / SIGNATURE</span>
+          <b>فنّ الرائحة</b>
+        </div>
+      </div>
+
+      <div class="hero-side-label">SCENT IS A MEMORY</div>
+    </section>
+
+    <section class="trust-strip" aria-label="مميزات المتجر">
+      <div>
+        <span>✧</span>
+        <p><b>اختيارات راقية</b><small>مجموعة منتقاة بعناية</small></p>
+      </div>
+      <div>
+        <span>♧</span>
+        <p><b>تجربة شراء سهلة</b><small>اطلب في خطوات بسيطة</small></p>
+      </div>
+      <div>
+        <span>◇</span>
+        <p><b>تغليف أنيق</b><small>هدية تستحق أن تُهدى</small></p>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> THE COLLECTION</p>
+          <h2>اكتشف <em>عطرك</em></h2>
+        </div>
+        <p class="section-intro">
+          من نفحات العود الدافئة إلى الروائح الزهرية المنعشة،
+          هناك دائمًا رائحة تشبهك.
+        </p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span>⌕</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="ابحث عن اسم العطر..."
+            aria-label="ابحث عن عطر"
+          />
+        </label>
+
+        <div class="filter-controls">
+          <select id="categoryFilter" aria-label="تصفية حسب النوع">
+            <option value="all">كل التصنيفات</option>
+            <option value="men">رجالي</option>
+            <option value="women">حريمي</option>
+            <option value="unisex">للجنسين</option>
+          </select>
+
+          <select id="sortFilter" aria-label="ترتيب المنتجات">
+            <option value="featured">ترتيب مميز</option>
+            <option value="low">السعر: من الأقل للأعلى</option>
+            <option value="high">السعر: من الأعلى للأقل</option>
+            <option value="rating">الأعلى تقييمًا</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-line">
+        <span id="resultsCount">40 عطرًا</span>
+        <span>الأسعار بالجنيه المصري</span>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        لم نعثر على عطر بهذه المواصفات. جرّب كلمة بحث أخرى.
+      </div>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="story-image">
+        <img
+          src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=1000&q=85"
+          alt="عطر فاخر بتصميم أنيق"
+          loading="lazy"
+        />
+        <span>THE ART OF PERFUME</span>
+      </div>
+
+      <div class="story-content">
+        <p class="eyebrow"><span></span> OUR PHILOSOPHY</p>
+        <h2>الرائحة ليست تفصيلًا.<br><em>إنها هويتك.</em></h2>
+        <p>
+          في NOIR نؤمن أن العطر أكثر من مجرد رائحة؛ إنه ذكرى،
+          ومزاج، وانطباع أول يبقى طويلًا. اختر ما يشبهك ودع عطرك يحكي قصتك.
+        </p>
+        <a href="#products" class="text-link">
+          تصفّح المجموعة <span>←</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#">
+      <span class="brand-mark">N</span>
+      <span>NOIR<small>PERFUME HOUSE</small></span>
+    </a>
+    <p>رائحة تليق بحضورك.</p>
+    <small>© <span id="year"></span> NOIR Perfume House — نموذج متجر تجريبي</small>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="سلة المشتريات" aria-hidden="true">
+    <div class="cart-head">
+      <div>
+        <p class="eyebrow">YOUR SELECTION</p>
+        <h2>سلة المشتريات <span id="drawerCount">(0)</span></h2>
+      </div>
+      <button class="icon-button" id="closeCart" aria-label="إغلاق السلة">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <span>◇</span>
+      <b>سلتك تنتظر عطرك المفضل</b>
+      <p>أضف عطرًا من المجموعة للبدء.</p>
+      <button class="gold-button" id="continueShopping">تصفّح العطور</button>
+    </div>
+
+    <div class="cart-bottom" id="cartBottom" hidden>
+      <div class="subtotal">
+        <span>الإجمالي</span>
+        <strong id="cartTotal">0 ج.م</strong>
+      </div>
+      <p>تكلفة الشحن تُحدد عند تأكيد الطلب.</p>
+      <button class="gold-button checkout-button" id="whatsappCheckout">
+        اطلب عبر واتساب <span>↗️</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
